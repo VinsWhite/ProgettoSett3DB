@@ -3,12 +3,14 @@ import { Button, Container, FormControl } from 'react-bootstrap';
 import { api } from '../../data/endpoint';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
+import DetailCategoryComp from './DetailCategoryComp';
 
 export default function MainComp() {
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [categories, setCategories] = useState([]);
     const [filteredCategories, setFilteredCategories] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
         // Recupera le categorie dall'API al caricamento della pagina
@@ -32,6 +34,11 @@ export default function MainComp() {
             category.toLowerCase().includes(searchQuery.toLowerCase())
         );
         setFilteredCategories(results);
+    };
+
+    // Funzione per gestire il dettaglio della categoria
+    const handleClick = (category) => {
+        setSelectedCategory(category);
     };
 
     return (
@@ -59,12 +66,14 @@ export default function MainComp() {
                     <div className="mt-5">
                         <ul>
                             {filteredCategories.map((category, index) => (
-                                <li key={index}>{category}</li>
+                                <li key={index} onClick={() => handleClick(category)} style={{cursor: 'pointer'}}>{category}</li>
                             ))}
                         </ul>
                     </div>
                 )}
-                
+                {selectedCategory && (
+                    <DetailCategoryComp category={selectedCategory} />
+                )}
             </div>
         </Container>
     );
