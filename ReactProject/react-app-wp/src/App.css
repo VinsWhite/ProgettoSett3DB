@@ -1,0 +1,82 @@
+/* CUSTOM CSS */
+
+h1 {
+    user-select: none;
+    cursor: pointer;
+}
+
+/* NAVBAR */
+.bg-secondary-custom {
+    background-color: rgb(235, 232, 232) !important;
+}
+
+.bg-secondary-custom.footer p:hover{
+    text-decoration: underline;
+}
+
+nav img {
+    user-select: none;
+    cursor: pointer;
+}
+
+nav .nav-link {
+    user-select: none;
+    cursor: pointer;
+}
+
+
+/* HOMEPAGE */
+
+/*Welcome Section*/
+#imgWPReact {
+    width: 100%;   
+}
+
+/* Articles */
+
+.titleArticle {
+    user-select: none;
+    cursor: pointer;
+}
+
+.titleArticle:hover {
+    color: red !important;
+}
+
+.ac:hover {/* Autori e categorie*/
+    text-decoration: underline;
+}
+
+
+/* NOT FOUND PAGE*/
+/* .space {
+    height: 100vh;
+    background-image: url("../src/img/space.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.toTop {
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0.2em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    opacity: 0; /* Inizialmente impostiamo l'opacità a 0 */
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Parte con opacità 0 */
+    }
+    to {
+      opacity: 1; /* Arriva a opacità 1 */
+    }
+  }
+  
+  
+  

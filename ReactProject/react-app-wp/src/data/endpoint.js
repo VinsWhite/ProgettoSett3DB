@@ -1,0 +1,1 @@
+export const api = 'http://localhost/back-end/S3L4/wordpress/wp-json/wp/v2/';
